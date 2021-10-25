@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>&lt;3</title>
+    <link href="style.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="container">
+
+      <div class="img-stack">
+        <div class="center-img">
+          <img src="assets/center-img.png" alt="center-img"/>
+        </div>
+        <div class="left-flower">
+          <img src="assets/left-flower.png" alt="left-flower"/>
+        </div>
+        <div class="right-flower">
+          <img src="assets/right-flower.png" alt="right-flower"/>
+        </div>
+        <div class="love-tag">
+          <img src="assets/love-tag.png" alt="love-tag"/>
+        </div>
+      </div>
+
+      <div class="text-stack">
+        <h1 id="res"></h1>
+        <img id="ribbon" src="assets/ribbon.png" alt="ribbon"/>
+      </div>
+
+    </div>
+
+    <script>
+      const day = 1000 * 60 * 60 * 24
+
+      const startDate = new Date('May 03, 2021 23:00:00')
+      let nowDate = new Date(Date.now())
+      let diff = Math.floor((nowDate.getTime() - startDate.getTime()) / day)
+
+      window.onload = () => {
+        let months=0, years=0, days=0
+        let res = document.getElementById('res')
+        while(diff) {
+          if (diff >= 365) {
+            years++
+            diff -= 365
+          } else if (diff >= 30) {
+            months++
+            diff -= 30
+          } else {
+            days++
+            diff--
+          }
+        }
+        ystr = years ? years.toString() + ' năm ' : ''
+        mstr = months ? months.toString() + ' tháng ' : ''
+        dstr = days ? days.toString() + ' ngày' : ''
+        res.innerHTML = ystr + mstr + dstr
+
+        // set ribbon position
+        let ribbon = document.getElementById('ribbon')
+        // console.log(res.offsetLeft, res.offsetWidth, res.offsetTop, res.offsetHeight);
+        ribbon.style.position = 'absolute'
+        ribbon.style.right = window.innerWidth - res.offsetLeft - res.offsetWidth - 10 + 'px'
+        ribbon.style.top = res.offsetHeight - 10 + 'px'
+        // console.log(ribbon.offsetWidth, ribbon. offsetHeight);
+      }
+    </script>
+
+  </body>
+</html>
