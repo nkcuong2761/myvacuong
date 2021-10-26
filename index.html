@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>&lt;3</title>
     <link href="style.css" rel="stylesheet"/>
   </head>
@@ -57,13 +58,18 @@
         dstr = days ? days.toString() + ' ngày' : ''
         res.innerHTML = ystr + mstr + dstr
 
-        // set ribbon position
+        updateRibbon()
+      }
+
+      function updateRibbon() {
         let ribbon = document.getElementById('ribbon')
-        // console.log(res.offsetLeft, res.offsetWidth, res.offsetTop, res.offsetHeight);
+        // set ribbon position
+        // console.log(window.innerWidth, ' | ',res.offsetLeft, res.offsetWidth, res.offsetTop, res.offsetHeight);
         ribbon.style.position = 'absolute'
-        ribbon.style.right = window.innerWidth - res.offsetLeft - res.offsetWidth - 10 + 'px'
+        // ribbon.style.right = window.innerWidth - res.offsetLeft - res.offsetWidth - 10 + 'px'
+        ribbon.style.marginLeft = -ribbon.offsetWidth + 'px'
         ribbon.style.top = res.offsetHeight - 10 + 'px'
-        // console.log(ribbon.offsetWidth, ribbon. offsetHeight);
+        // console.log(ribbon.offsetLeft, ribbon.offsetWidth, ribbon.style.right, ribbon. offsetHeight);
       }
     </script>
 
