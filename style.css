@@ -28,7 +28,6 @@ h1 {
   color: #552F2E;
   display: inline-block;
   width: auto;
-  margin: 20px 0px 0px 0px;
   top: 100%;
   opacity: 0;
   animation: loadUp 1s forwards;
@@ -129,6 +128,7 @@ h1 {
 @media screen and (max-device-width: 600px) {
   h1 {
     font-size: 15vw;
+    margin: -20px 0px 0px 0px;
   }
   .text-stack {
     padding-left: 20%;
@@ -161,6 +161,7 @@ h1 {
 @media screen and (min-device-width: 601px) {
   h1 {
     font-size: 96px;
+    margin: 20px 0px 0px 0px;
   }
   .img-stack {
     grid-template-columns: repeat(16, 1fr);
