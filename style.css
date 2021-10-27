@@ -24,7 +24,6 @@ h1 {
   font-style: normal;
   font-weight: bold;
   text-align: center;
-  font-size: 96px;
   letter-spacing: -0.1em;
   color: #552F2E;
   display: inline-block;
@@ -128,6 +127,13 @@ h1 {
 }
 
 @media screen and (max-device-width: 600px) {
+  h1 {
+    font-size: 15vw;
+  }
+  .text-stack {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
   .img-stack {
     grid-template-columns: repeat(12, 1fr);
     /* height: 40vh; */
@@ -136,23 +142,26 @@ h1 {
   }
   /* CENTER IMAGE */
   .center-img {
-    grid-column: 4 / span 6;
+    grid-column: 2 / span 10;
   }
   /* LEFT FLOWER */
   .left-flower {
-    grid-column: 3 / span 4;
+    grid-column: 1 / span 6;
   }
   /* RIGHT FLOWER */
   .right-flower {
-    grid-column: 8 / span 3;
+    grid-column: 9 / span 5;
   }
   /* LOVE TAG */
   .love-tag {
-    grid-column: 4 / span 2;
+    grid-column: 2 / span 3;
   }
 }
 
 @media screen and (min-device-width: 601px) {
+  h1 {
+    font-size: 96px;
+  }
   .img-stack {
     grid-template-columns: repeat(16, 1fr);
     /* height: 55vh; */
