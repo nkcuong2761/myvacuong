@@ -68,7 +68,10 @@
         ribbon.style.position = 'absolute'
         // ribbon.style.right = window.innerWidth - res.offsetLeft - res.offsetWidth - 10 + 'px'
         ribbon.style.marginLeft = -ribbon.offsetWidth + 'px'
-        ribbon.style.top = res.offsetHeight - 10 + 'px'
+        if (window.innerWidth > 600)
+          ribbon.style.top = res.offsetHeight - 10 + 'px'
+        else
+          ribbon.style.top = res.offsetHeight - 40 + 'px'
         // console.log(ribbon.offsetLeft, ribbon.offsetWidth, ribbon.style.right, ribbon. offsetHeight);
       }
     </script>
