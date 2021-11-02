@@ -5,12 +5,10 @@ html {
 body {
   background-color: #E0C9C3;
 }
-#_no-clickjacking-0 {
-  opacity: 0;
-}
 .scrn {
   position: relative;
   width: 100vw;
+  height: 100vh;
 }
 .container {
   position: absolute;
