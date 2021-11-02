@@ -5,8 +5,13 @@ html {
 body {
   background-color: #E0C9C3;
 }
+.scrn {
+  position: relative;
+  width: 100vw;
+}
 .container {
   position: absolute;
+  z-index: 0;
   top: 46%;
   width: 100vw;
   transform: translateY(-50%);
