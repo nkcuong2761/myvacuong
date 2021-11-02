@@ -42,13 +42,13 @@
       window.onload = () => {
         let months=0, years=0, days=0
         let res = document.getElementById('res')
-        while(diff) {
+        while(diff>0) {
           if (diff >= 365) {
             years++
             diff -= 365
-          } else if (diff >= 30) {
+          } else if (diff >= 30.5) {
             months++
-            diff -= 30
+            diff -= 30.5
           } else {
             days++
             diff--
