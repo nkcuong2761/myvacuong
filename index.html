@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="scrn">
-      <iframe src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1&enablejsapi=1&controls=0" frameborder="0" allow="autoplay" style="z-index: 20; height: 20vh; position: fixed; bottom: 0; left: -10px"></iframe>
+      <!-- <iframe src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1&enablejsapi=1&controls=0" frameborder="0" allow="autoplay" style="z-index: 20; height: 20vh; position: fixed; bottom: 0; left: -10px"></iframe> -->
       <!-- &mute=1" allowtransparency="true" -->
       <div class="container">
         <div class="img-stack">
@@ -31,7 +31,11 @@
           <img id="ribbon" src="assets/ribbon.png" alt="ribbon"/>
         </div>
       </div>
+      <div class="play-btn">
+        <img id="icon" onclick="playMusic()" src="assets/play.svg" alt="play-btn"/>
+      </div>
     </div>
+    <audio id="music" autoplay><source src="audio/music.mp3" /></audio>
 
     <script>
       const day = 1000 * 60 * 60 * 24
@@ -39,6 +43,12 @@
       const startDate = new Date('May 03, 2021 23:59:59')
       let nowDate = new Date(Date.now())
       let diff = Math.floor((nowDate.getTime() - startDate.getTime()) / day)
+
+      let music = document.getElementById("music")
+      let playing = false
+      let started = false
+      let audioIcon = document.getElementById("icon")
+      music.loop = true
 
       window.onload = () => {
         let months=0, years=0, days=0
@@ -75,6 +85,24 @@
         else
           ribbon.style.top = res.offsetHeight - 40 + 'px'
         // console.log(ribbon.offsetLeft, ribbon.offsetWidth, ribbon.style.right, ribbon. offsetHeight);
+      }
+
+      function playMusic() {
+        if (!started) {
+          music.currentTime = Math.floor(Math.random() * 3600) // 1 hour
+          started = true
+        }
+        if (!playing) {
+          console.log(music.currentTime)
+          music.play()
+          audioIcon.src = "assets/pause.svg"
+          playing = true
+        }
+        else {
+          music.pause()
+          audioIcon.src = "assets/play.svg"
+          playing = false
+        }
       }
     </script>
 
